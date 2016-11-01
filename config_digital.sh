@@ -17,8 +17,9 @@ echo "if [ -f \"$SRC_DIR\" ]; then" >> /usr/bin/rsync_home
 echo "  lftp -e \"put $SRC_DIR; exit\" $Maison ">> /usr/bin/rsync_home
 echo "  rm $SRC_DIR " >> /usr/bin/rsync_home
 echo "else" >> /usr/bin/rsync_home
-echo "  lftp --delete -e \"mirror -R \$SRC_DIR /\${TR_TORRENT_NAME} \" $Maison " >> /usr/bin/rsync_home
-echo "fi"
+echo "  lftp -e \"mirror -R \$SRC_DIR /\${TR_TORRENT_NAME} \" $Maison " >> /usr/bin/rsync_home
+echo "  rm -rf $SRC_DIR" >> /usr/bin/rsync_home
+echo "fi" >> /usr/bin/rsync_home
 
 chmod +x /usr/bin/rsync_home
 systemctl start transmission-daemon
