@@ -2,7 +2,7 @@
 
 Maison=96.22.48.89
 
-apt-get -y install transmission-daemon lftp
+apt-get -y install transmission-daemon
 systemctl stop transmission-daemon
 
 ssh-keygen -t rsa
