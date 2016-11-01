@@ -16,7 +16,7 @@ echo "* - nofile 1536" >> /etc/security/limits.conf
 
 echo '#!/bin/sh' > /usr/bin/rsync_home
 echo "SRC_DIR=\"\${TR_TORRENT_DIR}/\${TR_TORRENT_NAME}\"" >> /usr/bin/rsync_home
-echo "rsync --remove-source-files -avh -e ssh \"$SRC_DIR\" drynish@$Maison:/mnt/disk/Download" >> /usr/bin/rsync_home
+echo "rsync --remove-source-files -avh -e ssh \"\$SRC_DIR\" drynish@$Maison:/mnt/disk/Download" >> /usr/bin/rsync_home
 
 chmod +x /usr/bin/rsync_home
 systemctl start transmission-daemon
