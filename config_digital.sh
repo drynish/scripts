@@ -5,7 +5,7 @@ Maison=96.22.48.89
 apt-get -y install transmission-daemon lftp
 systemctl stop transmission-daemon
 
-ssh-keygen -t id_rsa
+ssh-keygen -t rsa
 ssh-copy-id drynish@$Maison
 
 sed -i.bak "s/127.0.0.1/127.0.0.1,$Maison/" /etc/transmission-daemon/settings.json 
