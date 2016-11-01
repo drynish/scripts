@@ -13,7 +13,7 @@ echo "* - nofile 1536" >> /etc/security/limits.conf
 
 echo '#!/bin/sh' > /usr/bin/rsync_home
 echo "SRC_DIR=\"\${TR_TORRENT_DIR}/\${TR_TORRENT_NAME}\"" >> /usr/bin/rsync_home
-echo "if [ -f \"\$SRC_DIR\" ]; then" >> /usr/bin/rsync_home
+echo "if [ -f \"\${SRC_DIR}\" ]; then" >> /usr/bin/rsync_home
 echo "  lftp -e \"put /upload/\${SRC_DIR}; exit\" $Maison ">> /usr/bin/rsync_home
 echo "  rm \${SRC_DIR} " >> /usr/bin/rsync_home
 echo "else" >> /usr/bin/rsync_home
