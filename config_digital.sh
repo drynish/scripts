@@ -8,6 +8,9 @@ systemctl stop transmission-daemon
 ssh-keygen -t rsa
 ssh-copy-id drynish@$Maison
 
+cp -R /root/.ssh /var/lib/transmission-daemon/
+chown -R debian-transmission.debian-transmission /var/lib/transmission-daemon/.ssh
+
 sed -i.bak "s/127.0.0.1/127.0.0.1,$Maison/" /etc/transmission-daemon/settings.json 
 sed -i.bak "s/script-torrent-done-enabled\": false/script-torrent-done-enabled\": true/" /etc/transmission-daemon/settings.json 
 sed -i.bak "s/done-filename\": \"\"/done-filename\": \"\/usr\/bin\/rsync_home\"/" /etc/transmission-daemon/settings.json 
