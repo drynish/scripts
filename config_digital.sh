@@ -14,8 +14,8 @@ chown -R debian-transmission.debian-transmission /var/lib/transmission-daemon/.s
 sed -i.bak "s/127.0.0.1/127.0.0.1,$Maison/" /etc/transmission-daemon/settings.json 
 sed -i.bak "s/script-torrent-done-enabled\": false/script-torrent-done-enabled\": true/" /etc/transmission-daemon/settings.json 
 sed -i.bak "s/done-filename\": \"\"/done-filename\": \"\/usr\/bin\/rsync_home\"/" /etc/transmission-daemon/settings.json 
-sed -i.bak "s/ratio-limit: 2/ratio-limit: 0.001/" /etc/transmission-daemon/settings.json 
-sed -i.bak "s/ratio-limit-enabled: false/ratio-limit-enabled: true/" /etc/transmission-daemon/settings.json 
+sed -i.bak "s/ratio-limit\": 2/ratio-limit\": 0.001/" /etc/transmission-daemon/settings.json 
+sed -i.bak "s/ratio-limit-enabled\": false/ratio-limit-enabled\": true/" /etc/transmission-daemon/settings.json 
 
 echo "* - nofile 1536" >> /etc/security/limits.conf
 
