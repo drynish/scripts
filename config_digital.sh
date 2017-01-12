@@ -1,6 +1,6 @@
 #!/bin/sh
 
-Maison=96.23.220.126
+Maison=96.23.200.41
 
 apt-get -y install transmission-daemon
 systemctl stop transmission-daemon
